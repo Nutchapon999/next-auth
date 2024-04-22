@@ -1,8 +1,8 @@
 'use client';
 
 import { useCallback, useEffect, useState } from "react";
-import { BeatLoader } from "react-spinners";
 import { useSearchParams } from "next/navigation";
+import { Loader } from "lucide-react";
 
 import { CardWrapper } from "@/components/auth/card-wrapper";
 import { newVerification } from "@/actions/new-verification";
@@ -46,7 +46,7 @@ export const NewVerificationForm = () => {
       <div className="flex items-center w-full justify-center">
         {
           !success && !error && (
-            <BeatLoader />
+            <Loader className="h-10 w-10 animate-spin"/>
           )
         }
         <FormSuccess message={success}/>
